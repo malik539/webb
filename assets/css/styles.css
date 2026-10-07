@@ -196,6 +196,18 @@ abbr[title] { text-decoration: none; color: var(--error); }
   .float-card--bottom { right: -24px; bottom: 44px; }
 }
 
+/* ---------- Trust strip ---------- */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.trust-strip { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 18px; }
+.trust-strip__list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; }
+.trust-strip__item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14.5px; color: var(--navy-800); line-height: 1.25; }
+.trust-strip__icon { display: grid; place-items: center; flex: none; width: 38px; height: 38px; border-radius: 12px; background: var(--ice); }
+.trust-strip__icon svg { width: 20px; height: 20px; fill: var(--navy); }
+.trust-strip__item:last-child { grid-column: 1 / -1; }
+@media (min-width: 768px) { .trust-strip__list { grid-template-columns: repeat(5, 1fr); } .trust-strip__item { flex-direction: column; text-align: center; gap: 8px; } .trust-strip__item:last-child { grid-column: auto; } }
+@media (min-width: 1024px) { .trust-strip__item { flex-direction: row; text-align: left; } }
+.section-foot { text-align: center; color: var(--ink-soft); margin: 28px auto 0; max-width: 680px; }
+
 /* ---------- Appointment form ---------- */
 .appointment { padding-block: var(--section-y); background: radial-gradient(120% 100% at 0% 0%, #0b6283 0%, var(--navy) 55%, var(--navy-800) 100%); color: #fff; }
 .appointment__grid { display: grid; gap: 36px; align-items: start; }
@@ -226,6 +238,16 @@ abbr[title] { text-decoration: none; color: var(--error); }
 .field--consent label { font-weight: 400; font-size: 14px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
 .field--consent .field__error { grid-column: 2; }
 .field--consent.is-invalid label { color: var(--error); }
+.field--consent label a { color: var(--navy); font-weight: 600; }
+.field--radio { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
+.field--radio legend { font-weight: 600; font-size: 15px; color: var(--navy-800); padding: 0; margin-bottom: 8px; }
+.radio-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.radio { position: relative; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 18px 10px 14px; border: 2px solid var(--line); border-radius: var(--radius-pill); background: var(--ice-50); cursor: pointer; font-weight: 500; font-size: 15.5px; color: var(--ink); transition: border-color .2s, background-color .2s, box-shadow .2s; }
+.radio:hover { border-color: var(--aqua-600); }
+.radio input { width: 20px; height: 20px; margin: 0; accent-color: var(--navy); cursor: pointer; }
+.radio:has(input:checked) { border-color: var(--navy); background: #fff; box-shadow: 0 0 0 4px rgba(152,217,215,0.45); }
+.radio:has(input:focus-visible) { outline: 3px solid var(--navy); outline-offset: 2px; }
+.field--radio.is-invalid .radio { border-color: var(--error); background: #fff5f4; }
 .btn__spinner { display: none; width: 18px; height: 18px; border: 3px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
 .lead-form.is-submitting .btn__spinner { display: inline-block; }
 .lead-form.is-submitting .btn { pointer-events: none; opacity: 0.85; }
@@ -244,6 +266,7 @@ abbr[title] { text-decoration: none; color: var(--error); }
 
 /* ---------- Cards: trust / services / tech / info ---------- */
 .trust-grid, .service-grid, .tech-grid, .info-grid, .review-grid { display: grid; gap: 18px; }
+.review-grid { align-items: start; }
 @media (min-width: 640px) { .trust-grid, .service-grid, .tech-grid, .info-grid, .review-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } .tech-grid, .info-grid, .review-grid { grid-template-columns: repeat(3, 1fr); } .service-grid { grid-template-columns: repeat(4, 1fr); } }
 .trust-card, .service-card, .tech-card, .info-card, .review-card {
@@ -254,7 +277,7 @@ abbr[title] { text-decoration: none; color: var(--error); }
 .trust-card h3, .service-card h3, .tech-card h3, .info-card h3 { font-size: 19px; margin-bottom: 8px; }
 .trust-card p, .service-card p, .tech-card p, .info-card p { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 10px; }
 .service-card { display: flex; flex-direction: column; }
-.service-card .check-list { margin-top: auto; }
+.service-card .check-list { margin-top: 2px; }
 
 /* ---------- Doctor ---------- */
 .doctor { overflow: hidden; }
@@ -283,8 +306,10 @@ abbr[title] { text-decoration: none; color: var(--error); }
 .age-card__num { display: inline-block; font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--aqua-600); letter-spacing: 0.08em; margin-bottom: 10px; }
 .age-card h3 { font-size: 20px; }
 .age-card p { color: var(--ink-soft); font-size: 15.5px; margin-bottom: 0; }
+.age-card h3 small { display: block; font-family: var(--font-body); font-weight: 500; font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
+.age-card .check-list--compact li strong { color: var(--navy); }
 .age-card--offer { background: linear-gradient(180deg, #fff 0%, var(--ice) 100%); border-color: var(--aqua); }
-.age-card__tag { position: absolute; top: 16px; right: 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: var(--navy); color: #fff; padding: 5px 10px; border-radius: var(--radius-pill); }
+.age-card__tag { position: absolute; top: 14px; right: 14px; max-width: 55%; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: var(--navy); color: #fff; padding: 5px 10px; border-radius: var(--radius-pill); }
 .age-card__offer { margin-top: 14px !important; padding-top: 12px; border-top: 1px dashed var(--aqua-600); color: var(--navy) !important; }
 
 /* ---------- First visit steps ---------- */
@@ -310,6 +335,9 @@ abbr[title] { text-decoration: none; color: var(--error); }
 .review-card p { color: var(--ink); font-size: 16px; margin: 0; flex: 1; }
 .review-card footer cite { font-style: normal; font-weight: 700; color: var(--navy); font-size: 15px; }
 .review-card footer cite::before { content: "— "; color: var(--aqua-600); }
+.review-card footer { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.review-card__src { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.02em; }
+.rating-pill strong { font-size: 17px; }
 
 /* ---------- Final CTA ---------- */
 .final-cta { padding-block: 0 var(--section-y); background: var(--ice); }

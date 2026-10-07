@@ -97,20 +97,22 @@
     last_name: function (v) { return v.trim().length >= 1 || 'Please enter your last name.'; },
     phone: function (v) { return v.replace(/\D/g, '').length >= 10 || 'Please enter a valid 10-digit phone number.'; },
     email: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Please enter a valid email address.'; },
+    new_patient: function (v, el) { return !!form.querySelector('input[name="new_patient"]:checked') || 'Please let us know if you are a new patient.'; },
     consent: function (v, el) { return el.checked || 'Please check this box so we can contact you.'; }
   };
 
   function fieldWrap(el) { return el.closest('.field'); }
+  function errorId(el) { return (el.type === 'radio' ? el.name : el.id) + '-error'; }
 
   function validate(el) {
     var fn = validators[el.name];
     if (!fn) return true;
     var result = fn(el.value, el);
     var wrap = fieldWrap(el);
-    var err = document.getElementById(el.id + '-error');
+    var err = document.getElementById(errorId(el));
     if (result === true) {
       wrap.classList.remove('is-invalid');
-      if (el.type !== 'checkbox') wrap.classList.add('is-valid');
+      if (el.type !== 'checkbox' && el.type !== 'radio') wrap.classList.add('is-valid');
       el.removeAttribute('aria-invalid');
       if (err) err.textContent = '';
       return true;
@@ -150,9 +152,11 @@
     e.preventDefault();
     if (form.elements.company && form.elements.company.value) return; // honeypot
 
-    var firstInvalid = null;
+    var firstInvalid = null, seen = {};
     Array.prototype.forEach.call(form.elements, function (el) {
-      if (validators[el.name] && !validate(el) && !firstInvalid) firstInvalid = el;
+      if (!validators[el.name] || seen[el.name]) return;
+      seen[el.name] = true;
+      if (!validate(el) && !firstInvalid) firstInvalid = el;
     });
     if (firstInvalid) {
       setStatus('Please fix the highlighted fields.', true);

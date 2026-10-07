@@ -23,11 +23,11 @@ python3 -m http.server 8080
 
 ## Before go-live
 
-1. Fill every slot listed by `python3 scripts/check-content.py` with the verbatim text from
-   https://smilehub.webbpediatricdentistry.com/new-patient (see CONTENT-TODO.md).
+1. Resolve the open items in CONTENT-TODO.md (financing copy, which Google rating to show) and confirm
+   `python3 scripts/check-content.py` reports no pending slots.
 2. Wire the form: set `FORM_ENDPOINT` (and `FORM_METHOD`) at the top of `assets/js/main.js` to the
-   existing LeadConnector / GHL endpoint and mirror the existing field `name`s, or drop the existing
-   GHL embed inside `.form-card`. Submit a test lead.
+   existing LeadConnector / GHL endpoint (field names already mirror the source form), or drop the
+   existing GHL embed inside `.form-card`. Submit a test lead.
 3. Paste the existing tracking snippets (GTM / GA4 / Google Ads / Meta Pixel / call tracking) into the
    two marked `TRACKING` comments in `index.html`. The page pushes `phone_click`,
    `appointment_cta_click`, `appointment_form_submit` and `appointment_form_error` to `dataLayer`.
