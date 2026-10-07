@@ -14,7 +14,7 @@
   <meta property="og:title" content="Pediatric Dentist in Charlotte, NC | Webb Pediatric Dentistry">
   <meta property="og:description" content="Perfecting smiles with caring hands. Request an appointment or call 704-459-2843. Free dental cleanings for children under 3 years old.">
   <meta property="og:url" content="https://smilehub.webbpediatricdentistry.com/new-patient">
-  <meta property="og:image" content="assets/img/hero-dr-webb-reading-1400.webp">
+  <meta property="og:image" content="assets/img/hero-child-dental-chair-1024.webp">
 
   <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500;700&display=swap">
 
-  <link rel="preload" as="image" href="assets/img/hero-dr-webb-reading-768.webp" imagesrcset="assets/img/hero-dr-webb-reading-480.webp 480w, assets/img/hero-dr-webb-reading-768.webp 768w, assets/img/hero-dr-webb-reading-1024.webp 1024w, assets/img/hero-dr-webb-reading-1400.webp 1400w" imagesizes="(min-width: 1024px) 46vw, 100vw">
+  <link rel="preload" as="image" href="assets/img/hero-child-dental-chair-768.webp" imagesrcset="assets/img/hero-child-dental-chair-480.webp 480w, assets/img/hero-child-dental-chair-768.webp 768w, assets/img/hero-child-dental-chair-1024.webp 1024w" imagesizes="(min-width: 1024px) 46vw, 100vw">
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- TRACKING (head): paste the existing GTM container / GA4 / Google Ads / Meta Pixel / call-tracking
@@ -94,11 +94,11 @@
         <div class="hero__media">
           <div class="hero__blob" aria-hidden="true"></div>
           <figure class="hero__figure">
-            <img src="assets/img/hero-dr-webb-reading-768.jpg"
-                 srcset="assets/img/hero-dr-webb-reading-480.webp 480w, assets/img/hero-dr-webb-reading-768.webp 768w, assets/img/hero-dr-webb-reading-1024.webp 1024w, assets/img/hero-dr-webb-reading-1400.webp 1400w"
+            <img src="assets/img/hero-child-dental-chair-768.jpg"
+                 srcset="assets/img/hero-child-dental-chair-480.webp 480w, assets/img/hero-child-dental-chair-768.webp 768w, assets/img/hero-child-dental-chair-1024.webp 1024w"
                  sizes="(min-width: 1024px) 46vw, 100vw"
-                 width="1400" height="1050" fetchpriority="high" decoding="async"
-                 alt="Dr. Logan Webb smiling while reading a picture book with a young child during a community visit">
+                 width="1024" height="768" fetchpriority="high" decoding="async"
+                 alt="A young boy relaxing in a bright yellow dental chair and grinning at the camera">
           </figure>
           <div class="float-card float-card--top reveal">
             <span class="float-card__icon" aria-hidden="true">
@@ -314,12 +314,11 @@
       <div class="container doctor__grid">
         <div class="doctor__media reveal">
           <div class="doctor__frame">
-            <!-- IMAGE: swap in the supplied Dr. Logan Webb portrait when provided; keep width/height to avoid layout shift. -->
-            <img src="assets/img/community-school-visit-768.webp"
-                 srcset="assets/img/community-school-visit-480.webp 480w, assets/img/community-school-visit-768.webp 768w, assets/img/community-school-visit-1024.webp 1024w"
+            <img src="assets/img/dr-logan-webb-portrait-768.webp"
+                 srcset="assets/img/dr-logan-webb-portrait-480.webp 480w, assets/img/dr-logan-webb-portrait-768.webp 768w, assets/img/dr-logan-webb-portrait-960.webp 960w"
                  sizes="(min-width: 1024px) 40vw, 100vw"
-                 width="1024" height="1280" loading="lazy" decoding="async"
-                 alt="Dr. Logan Webb seated beside a young child during a school visit, holding a toy dinosaur">
+                 width="960" height="1200" loading="lazy" decoding="async"
+                 alt="Dr. Logan Webb smiling in navy scrubs beside a dental chair at Webb Pediatric Dentistry">
           </div>
           <div class="float-card float-card--doctor">
             <span class="float-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 3.5 6v6c0 5 3.6 8.7 8.5 10 4.9-1.3 8.5-5 8.5-10V6L12 2Zm-1.2 13.6-3.2-3.2 1.4-1.4 1.8 1.8 4.2-4.2 1.4 1.4-5.6 5.6Z"/></svg></span>
@@ -535,38 +534,49 @@
           </p>
         </div>
 
-        <div class="review-grid">
-          <blockquote class="review-card reveal">
+        <div class="ticker" id="review-ticker" aria-label="Google reviews, scrolling slowly. Hover or focus to pause.">
+          <div class="ticker__track">
+            <div class="ticker__set review-set">
+          <blockquote class="review-card">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
             <p>Quick and painless first visit for my 5 year old after a history of traumatic tooth injury resulting in some serious dentist fears. Thanks for making her love the dentist!!</p>
+            <button class="review-card__more" type="button" aria-expanded="false" hidden>Read more</button>
             <footer><cite>Lauren Jeck</cite><span class="review-card__src">Google Review</span></footer>
           </blockquote>
-          <blockquote class="review-card reveal">
+          <blockquote class="review-card">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
             <p>We had our son&rsquo;s first dental visit with Dr. Webb at Webb Pediatric Dentistry, and it could not have gone better. Dr. Webb conducted her initial assessment and was wonderfully informative, knowledgeable, and patient. She explained everything clearly to us while keeping our son completely comfortable and at ease the whole time. A huge highlight was the gold coin reward at the end&mdash;our son got to put it in the lobby vending machine to choose a toy, which made the whole experience fun and memorable for a 7-year-old. We couldn&rsquo;t be happier with our visit and highly recommend Dr. Webb and her team!</p>
+            <button class="review-card__more" type="button" aria-expanded="false" hidden>Read more</button>
             <footer><cite>Don Hettiaratchy</cite><span class="review-card__src">Google Review</span></footer>
           </blockquote>
-          <blockquote class="review-card reveal">
+          <blockquote class="review-card">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
             <p>Dr.Logan and her staff were amazing and so nurturing with my son!</p>
+            <button class="review-card__more" type="button" aria-expanded="false" hidden>Read more</button>
             <footer><cite>Allison Moore</cite><span class="review-card__src">Google Review</span></footer>
           </blockquote>
-          <blockquote class="review-card reveal">
+          <blockquote class="review-card">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
             <p>Wonderful experience, they were able to schedule all my kids at the same time, make the toddler feel comfortable enough for a good exam, and delivered great care</p>
+            <button class="review-card__more" type="button" aria-expanded="false" hidden>Read more</button>
             <footer><cite>Sam Bores</cite><span class="review-card__src">Google Review</span></footer>
           </blockquote>
-          <blockquote class="review-card reveal">
+          <blockquote class="review-card">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
             <p>Dr Webb and her team are so wonderfully kind, patient, and informative! They ensure even the littlest of kids feel safe and comfortable. We love what a quiet office it is, perfect for kiddos that might get overwhelmed or overstimulated easily.</p>
+            <button class="review-card__more" type="button" aria-expanded="false" hidden>Read more</button>
             <footer><cite>Mackenzie Marosy</cite><span class="review-card__src">Google Review</span></footer>
           </blockquote>
-          <blockquote class="review-card reveal">
+          <blockquote class="review-card">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><i></i><i></i><i></i><i></i><i></i></span>
             <p>My daughter saw Dr. Logan for her very first dental appointment and it was an amazing experience! From the beautiful office packed with snacks, to the lovely decor, to the friendly staff and of course, Dr. Logan. My 2.5 year old STILL asks to go back to see Dr. Logan and had such a wonderful time getting her teeth cleaned. I&rsquo;m so happy that I found her and can&rsquo;t wait to go back. Also, the first exam is free which I really appreciate!</p>
+            <button class="review-card__more" type="button" aria-expanded="false" hidden>Read more</button>
             <footer><cite>Samantha Muraco</cite><span class="review-card__src">Google Review</span></footer>
           </blockquote>
+            </div>
+          </div>
         </div>
+        <p class="ticker__hint">Hover or tap a review to pause.</p>
       </div>
     </section>
 
@@ -584,11 +594,11 @@
           <p class="final-cta__offer">Free Dental Cleanings for Children Under 3 Years Old</p>
         </div>
         <div class="final-cta__media">
-          <img src="assets/img/community-brushing-demo-768.webp"
-               srcset="assets/img/community-brushing-demo-480.webp 480w, assets/img/community-brushing-demo-768.webp 768w, assets/img/community-brushing-demo-1024.webp 1024w"
+          <img src="assets/img/cta-dr-webb-reading-768.webp"
+               srcset="assets/img/cta-dr-webb-reading-480.webp 480w, assets/img/cta-dr-webb-reading-768.webp 768w, assets/img/cta-dr-webb-reading-1024.webp 1024w, assets/img/cta-dr-webb-reading-1400.webp 1400w"
                sizes="(min-width: 1024px) 38vw, 100vw"
-               width="1024" height="1280" loading="lazy" decoding="async"
-               alt="Dr. Logan Webb showing a young boy how to brush using a large tooth model while a group of children watches">
+               width="1400" height="1050" loading="lazy" decoding="async"
+               alt="Dr. Logan Webb smiling while reading a picture book with a young child during a community visit">
         </div>
       </div>
     </section>

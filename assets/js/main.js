@@ -82,6 +82,35 @@
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  /* ---------- Reviews ticker: duplicate the set for a seamless slow loop, "Read more" on long reviews ---------- */
+  var ticker = document.getElementById('review-ticker');
+  if (ticker) {
+    var set = ticker.querySelector('.ticker__set');
+    var cards = set.querySelectorAll('.review-card');
+    cards.forEach(function (card) {
+      var p = card.querySelector('p'), btn = card.querySelector('.review-card__more');
+      if (p && btn && p.scrollHeight > p.clientHeight + 2) {
+        btn.hidden = false;
+        btn.addEventListener('click', function () {
+          var open = card.classList.toggle('is-expanded');
+          btn.setAttribute('aria-expanded', String(open));
+          btn.textContent = open ? 'Show less' : 'Read more';
+          ticker.classList.toggle('is-paused', !!ticker.querySelector('.is-expanded'));
+        });
+      }
+    });
+    // Speed scales with content so the pace stays gentle on every screen (~25px per second).
+    var clone = set.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('button').forEach(function (b) { b.tabIndex = -1; });
+    ticker.querySelector('.ticker__track').appendChild(clone);
+    ticker.style.setProperty('--ticker-duration', Math.max(90, Math.round(set.scrollWidth / 25)) + 's');
+    ticker.classList.add('is-ready');
+    // Touch devices: pause while a finger is on the ticker.
+    ticker.addEventListener('touchstart', function () { ticker.classList.add('is-paused'); }, { passive: true });
+    ticker.addEventListener('touchend', function () { if (!ticker.querySelector('.is-expanded')) ticker.classList.remove('is-paused'); }, { passive: true });
+  }
+
   /* ---------- Footer year ---------- */
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());

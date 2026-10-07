@@ -31,9 +31,8 @@ python3 -m http.server 8080
 3. Paste the existing tracking snippets (GTM / GA4 / Google Ads / Meta Pixel / call tracking) into the
    two marked `TRACKING` comments in `index.html`. The page pushes `phone_click`,
    `appointment_cta_click`, `appointment_form_submit` and `appointment_form_error` to `dataLayer`.
-4. Swap in the Dr. Logan Webb portrait (and any additional approved images): drop originals in
-   `assets/src-images/`, add them to `PHOTOS` in `scripts/build-images.py`, run the script, and update
-   the `<img>` `src`/`srcset`.
+4. To add more approved images: drop originals in `assets/src-images/`, add them to `PHOTOS` in
+   `scripts/build-images.py`, run the script, and update the `<img>` `src`/`srcset`.
 5. Set the canonical URL / `robots` meta to match where the page is actually hosted.
 6. Run `python3 scripts/check-content.py --strict`; it must exit 0.
 

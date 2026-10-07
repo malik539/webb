@@ -339,6 +339,27 @@ abbr[title] { text-decoration: none; color: var(--error); }
 .review-card__src { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.02em; }
 .rating-pill strong { font-size: 17px; }
 
+/* ---------- Reviews ticker ---------- */
+.ticker { position: relative; overflow: hidden; margin-inline: calc(-1 * var(--gutter)); padding: 8px var(--gutter) 12px; }
+.ticker__track { display: flex; width: max-content; }
+.ticker__set { display: flex; gap: 18px; padding-right: 18px; align-items: stretch; }
+.ticker .review-card { width: min(380px, 82vw); flex: none; }
+.ticker.is-ready .ticker__track { animation: ticker-scroll var(--ticker-duration, 110s) linear infinite; }
+.ticker.is-ready:hover .ticker__track, .ticker.is-ready:focus-within .ticker__track, .ticker.is-paused .ticker__track { animation-play-state: paused; }
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
+.ticker__hint { text-align: center; font-size: 13px; color: var(--ink-soft); margin: 8px 0 0; }
+.review-card p { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.review-card.is-expanded p { display: block; -webkit-line-clamp: unset; }
+.review-card__more { align-self: flex-start; background: none; border: 0; padding: 0; margin: -4px 0 0; font: inherit; font-size: 14px; font-weight: 700; color: var(--navy); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.review-card__more:hover { color: var(--navy-700); }
+@media (prefers-reduced-motion: reduce) {
+  .ticker { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .ticker.is-ready .ticker__track { animation: none; }
+  .ticker__set[aria-hidden="true"] { display: none; }
+  .ticker .review-card { scroll-snap-align: start; }
+}
+@media (min-width: 1024px) { .ticker { margin-inline: 0; padding-inline: 0; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); } }
+
 /* ---------- Final CTA ---------- */
 .final-cta { padding-block: 0 var(--section-y); background: var(--ice); }
 .final-cta__card { display: grid; overflow: hidden; border-radius: var(--radius-lg); background: radial-gradient(120% 120% at 100% 100%, #0b6283 0%, var(--navy) 50%, var(--navy-800) 100%); color: #fff; box-shadow: var(--shadow-lg); padding: 0; }

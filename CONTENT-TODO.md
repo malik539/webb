@@ -15,8 +15,8 @@ All approved copy from https://smilehub.webbpediatricdentistry.com/new-patient h
 
 ## Images
 
-- Dr. Logan Webb portrait (the doctor section currently uses the school-visit community photo)
 - Any additional approved treatment / office / team imagery for the services and technology sections
+  (hero: child in dental chair; doctor: Dr. Webb portrait; final CTA: Dr. Webb reading to a child)
 
 ## Integration
 

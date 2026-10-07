@@ -19,10 +19,9 @@ OUT.mkdir(parents=True, exist_ok=True)
 # used to remove UI artifacts baked into a supplied screenshot.
 PRECROP = {"dr-webb-brushing-demo.png": (0.08, 0.0, 0.0, 0.0)}
 PHOTOS = {
-    "hero-dr-webb-reading": ("dr-webb-reading-to-child.png", (480, 768, 1024, 1400), (0.55, 0.42), (4, 3)),
-    "community-brushing-demo": ("dr-webb-brushing-demo.png", (480, 768, 1024), (0.5, 0.45), (4, 5)),
-    "community-school-visit": ("dr-webb-school-visit-dinosaur.png", (480, 768, 1024), (0.5, 0.4), (4, 5)),
-    "cta-dr-webb-reading-wide": ("dr-webb-reading-to-child.png", (768, 1200, 1800), (0.55, 0.45), (16, 9)),
+    "hero-child-dental-chair": ("child-in-dental-chair.jpg", (480, 768, 1024, 1400), (0.55, 0.45), (4, 3)),
+    "dr-logan-webb-portrait": ("dr-logan-webb-portrait.webp", (480, 768, 960), (0.42, 0.42), (4, 5)),
+    "cta-dr-webb-reading": ("dr-webb-reading-to-child.png", (480, 768, 1024, 1400), (0.55, 0.42), (4, 3)),
 }
 
 
